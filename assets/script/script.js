@@ -1,4 +1,5 @@
 // Assignment code here
+//This is the object that stores the imputs from the user
 const passwordParams = {
    passwordLength: 0,
    lowercase: false,
@@ -9,6 +10,7 @@ const passwordParams = {
 
 let generatedPassword = "";
 
+//These arrays have each different character choice available
 const lowercaseLetters = [
    "a",
    "b",
@@ -100,6 +102,8 @@ const specialCharacters = [
    "/",
 ];
 
+//This function picks each individual character based on the passwordParams.passwordLength and the what type of characters that
+//the user chose
 function pickCharacters() {
    generatedPassword = "";
    for (let i = 0; i < passwordParams.passwordLength; i++) {
@@ -123,6 +127,8 @@ function pickCharacters() {
    return generatedPassword;
 }
 
+//This is the main function that is called when you click the generate password button. This provides the prompts to the user to
+//gather inputs and to call the pickCharacters() function to send the value of generatedPassword to writePassword() function
 function generatePassword() {
    let userLength = prompt("Please choose a length between 8-128 characters");
    if (userLength === null) {
